@@ -44,7 +44,7 @@ namespace CryptoScanner.App.ApiCallers
         //    }
         //    throw new HttpRequestException();
         //}
-        public async Task<ExchangeRootModel> GetExchange(string exchangeName)
+        public async Task<ExchangeRootModel> MakeCall(string exchangeName)
         {
             HttpResponseMessage response = await Client.GetAsync(exchangeName.ToLower());
 
@@ -53,11 +53,27 @@ namespace CryptoScanner.App.ApiCallers
                 string cryptoJson = await response.Content.ReadAsStringAsync();
                 ExchangeRootModel? exchangeModel = JsonConvert.DeserializeObject<ExchangeRootModel>(cryptoJson);
 
-                return exchangeModel;
+                return exchangeModel!;
 
             }
             throw new HttpRequestException();
         }
+
+        public async Task<List<ExchangeRootModel>> MakeCallForTen(string url)
+        {
+            HttpResponseMessage response = await Client.GetAsync(url.ToLower());
+
+            if (response.IsSuccessStatusCode)
+            {
+                string cryptoJson = await response.Content.ReadAsStringAsync();
+                List<ExchangeRootModel>? exchangeModels = JsonConvert.DeserializeObject<List<ExchangeRootModel>>(cryptoJson);
+
+                return exchangeModels!;
+
+            }
+            throw new HttpRequestException();
+        }
+
     }
 }
 
