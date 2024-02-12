@@ -1,5 +1,5 @@
 
-﻿using CryptoScanner.Data.Models;
+using CryptoScanner.Data.Models;
 using Newtonsoft.Json;
 
 namespace CryptoScanner.App.ApiCallers
@@ -58,17 +58,7 @@ namespace CryptoScanner.App.ApiCallers
             }
             throw new HttpRequestException();
         }
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CryptoScanner.App.ApiCallers
-{
-    internal class CryptoApiCaller
-    {
-
     }
 }
+
+
