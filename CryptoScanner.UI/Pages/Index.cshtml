@@ -10,14 +10,18 @@
     <h2>Crypto-currencies</h2>
     <hr style="width: 20%; margin: 5px 0 5px 0;" />
     <br />
-    @foreach(var exchange in Model._ExchangeInfo!)
+    @foreach(var exchange in Model._Exchanges!)
     {
         if (exchange != null)
         {
-            <a asp-page="/CurrencyDetail" asp-route-currencyInfo="@exchange">
+            <a asp-page="/CurrencyDetail" asp-route-exchangeName="@exchange.Name">
                 <h3>@exchange.Name</h3>
             </a>
         }
     }
 </div>
+
+@* <a asp-page="/CurrencyDetail">
+    <h3>Cheat details button</h3>
+</a> *@
 

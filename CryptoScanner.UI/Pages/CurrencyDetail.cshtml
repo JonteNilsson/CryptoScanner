@@ -10,12 +10,12 @@
 @if (Model.Exchange != null)
 {
 	<div>
+		<img src="@Model.Exchange.Image" />
 		<h1>Currency name: @Model.Exchange.Name</h1>
 		<h4>Year established: @Model.Exchange.YearEstablished</h4>
 		<h4>Country: @Model.Exchange.Country</h4>
 		<h4>Description: @Model.Exchange.Description</h4>
 		<h4>Url: @Model.Exchange.Url</h4>
-		<h4>Image: @Model.Exchange.Image</h4>
 		<h4>Trading incentive: @Model.Exchange.HasTradingIncentive</h4>
 		<h4>Trust score: @Model.Exchange.TrustScore</h4>
 		<h4>Trust score rank: @Model.Exchange.TrustScoreRank</h4>
