@@ -29,21 +29,21 @@ namespace CryptoScanner.App.ApiCallers
         //    }
         //    throw new HttpRequestException();
         //}
-        //public async Task<SingleRootModel> GetValueInSec(int sek)
-        //{
+        public async Task<SingleRootModel> GetValueInSec(string url)
+        {
 
-        //    HttpResponseMessage response = await Client.GetAsync(sek);
+            HttpResponseMessage response = await Client.GetAsync(url);
 
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        string cryptoJson = await response.Content.ReadAsStringAsync();
-        //        SingleRootModel? singleModel = JsonConvert.DeserializeObject<SingleRootModel>(cryptoJson);
+            if (response.IsSuccessStatusCode)
+            {
+                string cryptoJson = await response.Content.ReadAsStringAsync();
+                SingleRootModel? singleModel = JsonConvert.DeserializeObject<SingleRootModel>(cryptoJson);
 
-        //        return singleModel;
+                return singleModel;
 
-        //    }
-        //    throw new HttpRequestException();
-        //}
+            }
+            throw new HttpRequestException();
+        }
         public async Task<ExchangeRootModel> MakeCall(string exchangeName)
         {
             HttpResponseMessage response = await Client.GetAsync(exchangeName.ToLower());
