@@ -59,6 +59,7 @@ namespace CryptoScanner.App.ApiCallers
             throw new HttpRequestException();
         }
 
+
         public async Task<List<ExchangeRootModel>> MakeCallForTen(string url)
         {
             HttpResponseMessage response = await Client.GetAsync(url.ToLower());
@@ -73,6 +74,7 @@ namespace CryptoScanner.App.ApiCallers
             }
             throw new HttpRequestException();
         }
+
 
     }
 }
