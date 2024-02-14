@@ -9,7 +9,7 @@ namespace CryptoScanner.UI.Pages
         public string? ErrorMessage { get; set; }
 
         public ExchangeRootModel? Exchange { get; set; }
-        public Root? Value { get; set; }
+        public SekModel? Value { get; set; }
 
 
         public async Task OnGet(string exchangeName)
@@ -25,7 +25,7 @@ namespace CryptoScanner.UI.Pages
 
             try
             {
-                Value = await new CryptoApiCaller().GetValueInSec("simple/price?ids=bitcoin&vs_currencies=sek");
+                Value = await new CryptoApiCaller().GetValueInSec($"simple/price?ids={exchangeName.Trim().ToLower()}&vs_currencies=sek");
             }
             catch (Exception ex)
             {
