@@ -21,6 +21,14 @@
 		<h4>Trust score rank: @Model.Exchange.TrustScoreRank</h4>
 		<h4>Trade volume: @Model.Exchange.TradeVolume24hBtc</h4>
 		<h4>Trade volume normalized: @Model.Exchange.TradeVolume24hBtcNormalized</h4>
+		@if(Model.Value == null)
+		{
+			<h3>Worth: cant be found</h3>
+		}
+		else
+		{
+		<h3>Worth: @Model.Value.Sek</h3>	
+		}
 	</div>
 }
 else
