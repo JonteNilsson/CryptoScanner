@@ -1,10 +1,4 @@
-﻿using CryptoScanner.Data.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace CryptoScanner.Data.Database
 {
@@ -12,7 +6,7 @@ namespace CryptoScanner.Data.Database
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<NyModel> CryptoDb { get; set; }
+        //public DbSet<NyModel> CryptoDb { get; set; }
 
     }
 }
