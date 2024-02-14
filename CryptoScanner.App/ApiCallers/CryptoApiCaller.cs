@@ -29,7 +29,7 @@ namespace CryptoScanner.App.ApiCallers
         //    }
         //    throw new HttpRequestException();
         //}
-        public async Task<SingleRootModel> GetValueInSec(string url)
+        public async Task<Root> GetValueInSec(string url)
         {
 
             HttpResponseMessage response = await Client.GetAsync(url);
@@ -37,7 +37,7 @@ namespace CryptoScanner.App.ApiCallers
             if (response.IsSuccessStatusCode)
             {
                 string cryptoJson = await response.Content.ReadAsStringAsync();
-                SingleRootModel? singleModel = JsonConvert.DeserializeObject<SingleRootModel>(cryptoJson);
+                Root singleModel = JsonConvert.DeserializeObject<Root>(cryptoJson);
 
                 return singleModel;
 
