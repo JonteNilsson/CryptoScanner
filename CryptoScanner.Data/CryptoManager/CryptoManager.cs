@@ -1,12 +1,4 @@
-﻿using CryptoScanner.Data.Models;
-using CryptoScanner.Data.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CryptoScanner.Data.CryptoManager
+﻿namespace CryptoScanner.Data.CryptoManager
 {
     public class CryptoManager
     {
@@ -25,4 +17,4 @@ namespace CryptoScanner.Data.CryptoManager
         //    return pokemonViewModel;
     }
 }
-}
+
