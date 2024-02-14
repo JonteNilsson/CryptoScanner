@@ -29,7 +29,7 @@ namespace CryptoScanner.App.ApiCallers
         //    }
         //    throw new HttpRequestException();
         //}
-        public async Task<Root> GetValueInSec(string url)
+        public async Task<SekModel> GetValueInSec(string url)
         {
 
             HttpResponseMessage response = await Client.GetAsync(url);
@@ -37,9 +37,20 @@ namespace CryptoScanner.App.ApiCallers
             if (response.IsSuccessStatusCode)
             {
                 string cryptoJson = await response.Content.ReadAsStringAsync();
-                Root singleModel = JsonConvert.DeserializeObject<Root>(cryptoJson);
 
-                return singleModel;
+
+                // Dynamic parsing
+                var data = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(cryptoJson);  // En dictionary där "key" är namnet på valutan, och den tar emot dynamic(vad som helst)
+
+                foreach (var item in data)
+                {
+                    SekModel currency = JsonConvert.DeserializeObject<SekModel>(item.Value.ToString());
+                }
+
+
+                var singleModel = JsonConvert.DeserializeObject<SekModel>(cryptoJson);
+
+                return singleModel; // TODO: CHange to sek model
 
             }
             throw new HttpRequestException();
