@@ -4,26 +4,24 @@ namespace CryptoScanner.Data.Models
 {
     public class NyModel
     {
-        public class Root
-        {
-            [JsonProperty("id")]
-            public string Id { get; set; }
 
-            [JsonProperty("symbol")]
-            public string Symbol { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
 
-            [JsonProperty("name")]
-            public string Name { get; set; }
+        [JsonProperty("symbol")]
+        public string Symbol { get; set; }
 
-            [JsonProperty("image")]
-            public string Image { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
-            [JsonProperty("current_price")]
-            public double? CurrentPrice { get; set; }
+        [JsonProperty("image")]
+        public string Image { get; set; }
 
-            [JsonProperty("market_cap")]
-            public object MarketCap { get; set; }
-        }
+        [JsonProperty("current_price")]
+        public double? CurrentPrice { get; set; }
+
+        [JsonProperty("market_cap")]
+        public object MarketCap { get; set; }
 
 
     }
